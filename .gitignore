@@ -1,0 +1,5 @@
+# .gitignore automatically created on 2019-09-11 22:32
+# adding untracked files on 2019-09-11 22:32
+.vscode/
+magictag/__pycache__/
+test/__pycache__/
