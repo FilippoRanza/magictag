@@ -17,7 +17,7 @@ def parse_args():
                        help='update version to the next patch/bug fix release',
                        const=Command.PATCH, dest='command')
                        
-    parser.add_argument('-P', '--pull',
+    parser.add_argument('-P', '--push',
                         help='automatically push new tag on the given remote')
 
     parser.add_argument('--msg', help='specify tag message')
@@ -30,9 +30,9 @@ def get_message(msg):
     return input('Insert tag message: ')
 
 
-def auto_tag(cmd, pull, msg):
+def auto_tag(cmd, push, msg):
     try:
-        run(cmd, pull, msg)
+        run(cmd, push, msg)
     except ValueError as err:
         print(err)
     except FileNotFoundError:
@@ -42,7 +42,7 @@ def main():
     args = parse_args()
     if args:
         msg = get_message(args.msg)
-        auto_tag(args.command, args.pull, msg)
+        auto_tag(args.command, args.push, msg)
         
 if __name__ == '__main__':
     main()

@@ -26,9 +26,9 @@ def _get_next_version(cmd, ver):
         out = ver.next_patch()
     return out
 
-def run(cmd, pull, msg):
+def run(cmd, push, msg):
     ver = _build_semver()
     next_tag = _get_next_version(cmd, ver)
     git_tag(next_tag, msg)
-    if pull:
-        git_pull(next_tag, pull)
+    if push:
+        git_pull(next_tag, push)
