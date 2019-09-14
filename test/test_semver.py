@@ -2,7 +2,7 @@
 
 import unittest
 
-from magictag import semver
+from magic_tag import semver
 
 class TestSemVer(unittest.TestCase):
 
