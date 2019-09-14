@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 
 from argparse import ArgumentParser
-from magictag import retag, Command
+from magic_tag import retag, Command
 
 
 def parse_args():
