@@ -3,3 +3,5 @@
 .vscode/
 magictag/__pycache__/
 test/__pycache__/
+# adding untracked files on 2019-09-14 19:30
+magic_tag/__pycache__/
