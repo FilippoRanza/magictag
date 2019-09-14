@@ -26,7 +26,7 @@ def _get_next_version(cmd, ver):
         out = ver.next_patch()
     return out
 
-def run(cmd, push, msg):
+def retag(cmd, push, msg):
     ver = _build_semver()
     next_tag = _get_next_version(cmd, ver)
     git_tag(next_tag, msg)

@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 
 from argparse import ArgumentParser
-from magictag import run, Command
+from magictag import retag, Command
 
 
 def parse_args():
@@ -32,7 +32,7 @@ def get_message(msg):
 
 def auto_tag(cmd, push, msg):
     try:
-        run(cmd, push, msg)
+        retag(cmd, push, msg)
     except ValueError as err:
         print(err)
     except FileNotFoundError:
