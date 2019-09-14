@@ -17,7 +17,7 @@ def find_packages():
     return out
 
 
-setup(name='magictag',
+setup(name='magictag.py',
       version='0.1',
       description='Easly create new git tags',
       author='Filippo Ranza',

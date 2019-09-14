@@ -2,7 +2,7 @@
 
 set -e
 
-FILE=$(which magictag) 
+FILE=$(which magictag.py) 
 BASE_DIR=$(dirname "$FILE")
 
 echo "$FILE"
