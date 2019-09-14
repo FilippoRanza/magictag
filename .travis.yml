@@ -5,5 +5,9 @@ language: python
 python:
   - "3.7"
 
+install:
+  - sudo python3 setup.py install
+
 script: 
+  - bash check_install.sh
   - python -m pytest test
