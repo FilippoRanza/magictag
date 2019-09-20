@@ -2,7 +2,7 @@
 
 from enum import Enum
 
-from .git_runner import git_pull, git_tag, tag_version
+from .git_runner import git_push, git_tag, tag_version
 from .semver import semver_factory
 
 class Command(Enum):
@@ -31,4 +31,4 @@ def retag(cmd, push, msg):
     next_tag = _get_next_version(cmd, ver)
     git_tag(next_tag, msg)
     if push:
-        git_pull(next_tag, push)
+        git_push(next_tag, push)

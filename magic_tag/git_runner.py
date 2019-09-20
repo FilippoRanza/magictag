@@ -27,5 +27,5 @@ def git_tag(version, message):
     return _git_runner_('tag', ('-a', version), ('-m', message))
 
 
-def git_pull(version, remote):
-    return _git_runner_('pull', (version, ), (remote, ))
+def git_push(version, remote):
+    return _git_runner_('push', (version, ), (remote, ))
