@@ -29,3 +29,9 @@ def git_tag(version, message):
 
 def git_push(version, remote):
     return _git_runner_('push', (remote, ), (version, ))
+
+
+def git_auto_push(version):
+    branch = _git_runner_('symbolic-ref', ('--short', 'HEAD'))
+    remote = _git_runner_('config', ('--get', f'branch.{branch}.remote'))
+    git_push(version, remote)
