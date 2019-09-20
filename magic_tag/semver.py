@@ -30,10 +30,7 @@ class SemVer:
         return self.__build_ver()
 
     def __build_ver(self):
-        if not self.patch:
-            out = f'{self.head}{self.major}.{self.minor}{self.tail}'
-        else:
-            out = f'{self.head}{self.major}.{self.minor}.{self.patch}{self.tail}'
+        out = f'{self.head}{self.major}.{self.minor}.{self.patch}{self.tail}'
         return out
 
 
