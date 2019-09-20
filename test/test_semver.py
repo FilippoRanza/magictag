@@ -8,10 +8,10 @@ class TestSemVer(unittest.TestCase):
 
     def test_conversion(self):
         ver = semver.SemVer('', 4, 5, 0, '')
-        self.assertEqual(ver.next_major(), '5.0')
+        self.assertEqual(ver.next_major(), '5.0.0')
 
         ver = semver.SemVer('', 4, 7, 12, '')
-        self.assertEqual(ver.next_minor(), '4.8')
+        self.assertEqual(ver.next_minor(), '4.8.0')
 
         ver = semver.SemVer('', 4, 5, 0, '')
         self.assertEqual(ver.next_patch(), '4.5.1')
