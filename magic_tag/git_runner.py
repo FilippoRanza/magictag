@@ -32,7 +32,6 @@ def git_push(version, remote):
 
 
 def git_auto_push(version):
-    branch = _git_runner_('symbolic-ref', ('--short', 'HEAD'))
-    branch = branch.rstrip()
-    remote = _git_runner_('config', ('--get', f'branch.{branch}.remote'))
+    branch = _git_runner_('symbolic-ref', ('--short', 'HEAD')).rstrip()
+    remote = _git_runner_('config', ('--get', f'branch.{branch}.remote')).rstrip()
     git_push(version, remote)
