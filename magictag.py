@@ -16,6 +16,9 @@ def parse_args():
     version_group.add_argument('-p', '--patch', action='store_const',
                        help='update version to the next patch/bug fix release',
                        const=Command.PATCH, dest='command')
+                       
+    parser.add_argument('--msg', help='specify tag message')
+
 
     parser.add_argument('-P', '--push', action='store_true',
                         help='''automatically push new tag on the default remote
@@ -23,11 +26,12 @@ def parse_args():
 
     parser.add_argument('-r', '--remote',
                         help='''specify remote onto which push the new tag
-                        instead of using the automatically found one''')
+                        instead of using the automatically found one
+                        this option has effect only if used with "--push"''')
 
-    parser.add_argument('--msg', help='specify tag message')
-                    
-    return parser.parse_args()
+    
+    args = parser.parse_args()             
+    return args
 
 def get_message(msg):
     if msg:
