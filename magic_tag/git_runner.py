@@ -28,4 +28,4 @@ def git_tag(version, message):
 
 
 def git_push(version, remote):
-    return _git_runner_('push', (version, ), (remote, ))
+    return _git_runner_('push', (remote, ), (version, ))
